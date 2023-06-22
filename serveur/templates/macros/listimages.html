@@ -1,9 +1,9 @@
-{% macro list_images(name, url, alt, urlfull) -%}
-    <div>
+{% macro list_images(name, url, alt, urlfull, datatag) -%}
+    <div class="filtrable" data-tag="{{datatag}}">
         <span class="popup-on-click">
-            <a class="d-none d-md-flex" data-bs-target="#{{name}}" data-bs-toggle="modal">
+            <span class="d-none d-md-flex" data-bs-target="#{{name}}" data-bs-toggle="modal">
                 <div class="zoom-image"><img src="{{url}}" alt="{{alt}}"></div>
-            </a>
+            </span>
             <span class="d-flex d-md-none">
                 <div class=""><img src="{{url}}" alt="{{alt}}"></div>
             </span>
