@@ -9,6 +9,6 @@ def register_route(app):
         return render_template(
             'portfolio.html', 
             TIME=time.time(),
-            images=images
-            URLSITE="http://deinos.eu.pythonanywhere.com/portfolio"
+            images=images,
+            URLSITE="http://deinos.eu.pythonanywhere.com"
         )
