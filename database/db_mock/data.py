@@ -36,10 +36,4 @@ def images():
          "https://raw.githubusercontent.com/DeinosArt/portfolio_images/main/fullsize/Shenhe.png",
          ("fanart", "personnage")
          ),
-         ("Zhongli",
-         "https://raw.githubusercontent.com/DeinosArt/portfolio_images/main/previews/Zhongli.png",
-         "fanart Zhongli Genshin" ,
-         "https://raw.githubusercontent.com/DeinosArt/portfolio_images/main/fullsize/Zhongli.png",
-         ("fanart", "personnage")
-         ),
     ]

@@ -1,28 +1,29 @@
-from database.utils import get_postgres_credentials
 import psycopg2
 
 def select_images():
-    images = []
+    # import postgresql
+    # db = postgresql.get_db()
+    # return db.select("images")
     try:
-        user, password = get_postgres_credentials()
         conn = psycopg2.connect(
-            user = user,
-            password = password,
+            user = "postgres",
+            password = "admin",
             host = "localhost",
             port = "5432",
             database = "portfolio"
         )
-        cur = conn.cursor() 
-        cur.execute("select name, url, description, url_full_size, tags from images")
+        cur = conn.cursor()
+        # Afficher la version de PostgreSQL 
+        cur.execute("select * from images")
         images = cur.fetchall()
-        print(images)
+        print("Images : ", images,"\n")
     
         #fermeture de la connexion à la base de données
         cur.close()
         conn.close()
+        print("La connexion PostgreSQL est fermée")
     except (Exception, psycopg2.Error) as error :
         print ("Erreur lors de la connexion à PostgreSQL", error)
-    return images
+    return []
 
-
-
+select_images()
